@@ -1,0 +1,24 @@
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0; 
+}
+
+.logoImage {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.logoLink:hover .logoImage {
+  opacity: 0.85;
+  transform: scale(1.03); 
+}
+
+@media (max-width: 768px) {
+  .logoImage {
+    width: 100px; 
+  }
+}

@@ -1,0 +1,70 @@
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: 0.5s;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 1000;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--foreground);
+  border-radius: 4px;
+  transition-duration: 0.5s; /* הוספתי לכאן כדי שהחזרה למצב סגור תהיה חלקה */
+}
+
+.bar1 {
+  width: 50%;
+}
+
+.bar2 {
+  width: 75%;
+  transition-duration: 0.8s;
+}
+
+.bar3 {
+  width: 100%;
+}
+
+/* --- מצב פתוח (כשהסטייט ב-React השתנה) --- */
+.toggle.open {
+  transition-duration: 0.5s;
+  transform: rotate(180deg);
+}
+
+.toggle.open .bar {
+  position: absolute;
+  transition-duration: 0.5s;
+}
+
+.toggle.open .bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+}
+
+.toggle.open .bar2 {
+  transform: scaleX(0);
+  transition-duration: 0.1s;
+}
+
+.toggle.open .bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
+/* הסתרת הכפתור במסכים גדולים */
+@media (min-width: 768px) {
+  .toggle {
+    display: none;
+  }
+}

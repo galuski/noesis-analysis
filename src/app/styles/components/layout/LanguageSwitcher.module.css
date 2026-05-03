@@ -1,0 +1,65 @@
+/* המיכל שעוטף את הכל - חשוב כדי שהתפריט הנפתח ימוקם ביחס אליו */
+.container {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+
+/* הכפתור הראשי */
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: 1px solid var(--foreground);
+  border-radius: 6px;
+}
+
+/* התפריט הנפתח - מוסתר כברירת מחדל */
+.dropdown {
+  position: absolute;
+  top: 100%; /* ממקם את התפריט בדיוק מתחת לכפתור */
+  right: 0; /* מצמיד אותו לצד ימין (או left: 0 אם תרצה לשמאל) */
+  margin-top: 4px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  z-index: 100; /* מוודא שהתפריט יופיע מעל אלמנטים אחרים */
+  
+  /* הסתרה כברירת מחדל */
+  display: none; 
+  flex-direction: column;
+}
+
+/* כשהקלאס 'open' מתווסף (בלחיצה), התפריט מוצג */
+.dropdown.open {
+  display: flex;
+}
+
+/* עיצוב אופציות השפה בתוך התפריט */
+.langOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left; /* יישור הטקסט */
+}
+
+/* אפקט מעבר עכבר על השפות */
+.langOption:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.flagIcon {
+  border-radius: 2px;
+  object-fit: cover;
+}

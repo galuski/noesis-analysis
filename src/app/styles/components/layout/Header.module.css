@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1.2rem;
+  position: relative; 
+}
+
+/* עיצוב מובייל-פירסט (מסכים קטנים) */
+.nav {
+  display: flex;
+  justify-content: center; /* ממורכז את הלוגו באמצע */
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  /* מומלץ לתת גובה מינימלי להדר כדי שלא יקרוס כשמוציאים אלמנטים לאבסולוט */
+  min-height: 40px; 
+}
+
+.actions {
+  position: absolute;
+  left: 0; /* מצמיד לשמאל */
+}
+
+.hamburgerWrapper {
+  position: absolute;
+  right: 0; /* מצמיד לימין */
+}
+
+/* עיצוב למסכים גדולים יותר (דסקטופ/טאבלט) */
+@media (min-width: 768px) {
+  .nav {
+    justify-content: space-between; /* מחזיר את הפיזור הרגיל של דסקטופ */
+  }
+  
+  .actions {
+    position: static; /* מבטל את המיקום האבסולוטי */
+  }
+
+  .hamburgerWrapper {
+    /* בדרך כלל נהוג להסתיר את תפריט ההמבורגר בדסקטופ, 
+       אם תרצה להשאיר אותו, פשוט שנה ל- position: static */
+    display: none; 
+  }
+}

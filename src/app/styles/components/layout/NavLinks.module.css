@@ -1,0 +1,114 @@
+/* =========================================
+   מצב מובייל (ברירת מחדל) - תפריט מסך מלא
+   ========================================= */
+.list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background); /* צבע הרקע של התפריט המלא */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  z-index: 40; /* מתחת להמבורגר */
+  
+  /* מצב סגור */
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(-20px); /* אפקט החלקה קלה מלמעלה */
+  transition: all 0.4s ease-in-out;
+}
+
+/* מצב פתוח (מופעל דרך ה-React) */
+.list.open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* =========================================
+   עיצוב הקישורים (האנימציה המקורית שלך)
+   ========================================= */
+.link {
+  text-decoration: none;
+  color: #333; 
+  position: relative;
+  padding-bottom: 6px; 
+  display: inline-block;
+  transition: color 0.3s ease;
+  font-size: 1.5rem; /* הגדלתי מעט למובייל, אפשר לשנות */
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  width: 0; 
+  height: 1px; 
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box; 
+  width: 6px; 
+  height: 6px;
+  border-top: 1px solid currentColor; 
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+  bottom: -2.5px; 
+  left: 0; 
+  opacity: 0;
+  transition: left 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.link:hover::before,
+.active::before {
+  width: 100%;
+}
+
+.link:hover::after,
+.active::after {
+  left: calc(100% - 7px); 
+  opacity: 1;
+}
+
+.active {
+  font-weight: bold;
+}
+
+/* =========================================
+   מצב דסקטופ (מסכים מ-768px ומעלה)
+   ========================================= */
+@media (min-width: 768px) {
+  .list {
+    position: static; /* ביטול המסך המלא */
+    width: auto;
+    height: auto;
+    flex-direction: row; /* חזרה לשורה */
+    background-color: transparent;
+    gap: 40px;
+    z-index: auto;
+    
+    /* ביטול ההסתרה של המובייל */
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: none;
+  }
+  
+  .link {
+    font-size: 1rem; /* גודל טקסט רגיל לדסקטופ */
+  }
+}
