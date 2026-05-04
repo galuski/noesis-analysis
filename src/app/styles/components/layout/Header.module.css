@@ -3,7 +3,7 @@
   flex-direction: row;
   width: 100%;
   padding: 1.2rem;
-  position: relative; 
+  position: absolute; 
 }
 
 /* עיצוב מובייל-פירסט (מסכים קטנים) */

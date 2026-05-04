@@ -1,0 +1,85 @@
+.services {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 2rem; /* ריווח נשימה מלמעלה/למטה ומהצדדים למובייל */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center; /* מרכוז הכותרת מעל הטקסט */
+}
+
+.subtitle {
+  white-space: pre-line;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card {
+  text-align: center;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* טור 1 במובייל */
+  gap: 30px;
+}
+
+/* מסכים גדולים יותר - 3 טורים */
+@media (min-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* עיצוב הכרטיסייה עצמה */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+} */
+
+/* עטיפת התמונה קריטית כשעובדים עם fill ב-next/image */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px; /* גובה קבוע לתמונות */
+  padding: 20px;
+}
+
+.cardImage {
+  object-fit: contain; /* מוודא שהתמונה תחתוך את עצמה יפה בלי להימעך */
+}
+.cardImage:hover {
+  transform: translateY(-5px);
+}
+
+.cardContent {
+  padding: 10px;
+  flex-grow: 1; /* מוודא שהטקסט ימלא את המקום אם הכרטיסיות בגבהים שונים */
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--foreground);
+  line-height: 1.4;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.6;
+}

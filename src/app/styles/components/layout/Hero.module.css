@@ -1,0 +1,84 @@
+/* === עיצוב בסיס (מסכים גדולים) === */
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem; 
+  position: relative;
+}
+
+.imageContainer {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 800px; /* שומר על הגודל המקורי של התמונה */
+  display: flex;
+  justify-content: center;
+}
+
+/* הגדרה קריטית כדי שהתמונה תקטן במסכים קטנים ולא תשבור את האתר */
+.mapImage {
+  width: 100%;
+  height: auto;
+}
+
+.contentContainer {
+  text-align: center;
+  margin-top: -150px;
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  white-space: pre-line;
+}
+
+
+/* === טאבלטים ומסכים בינוניים (עד 1024px) === */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.8rem; /* הקטנה קלה של הכותרת */
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .contentContainer {
+    margin-top: -40px; /* הקטנת העלייה על התמונה כי התמונה קטנה יותר */
+  }
+}
+
+
+/* === מובייל ומסכים קטנים (עד 768px) === */
+@media (max-width: 768px) {
+  .hero {
+    justify-content: space-evenly; /* מפזר את האלמנטים טוב יותר לאורך המסך בנייד */
+    padding-top: 80px; /* עושה מקום לתפריט הניווט (Navbar) למעלה */
+  }
+
+  .imageContainer {
+    margin-top: 0; /* מאפס את המרווח מלמעלה בנייד */
+  }
+
+  .contentContainer {
+    margin-top: -20px; 
+  }
+
+  .title {
+    font-size: 2rem; /* גודל מותאם למובייל */
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}

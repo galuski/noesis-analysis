@@ -1,10 +1,15 @@
 import Image from "next/image";
 import styles from "./styles/pages/page.module.css";
+import Hero from "@/components/layout/Hero";
+import About from "@/components/layout/About";
+import Services from "@/components/layout/Services";
 
 export default function Home() {
   return (
-<div className={styles.home}>
-  <h1>Noesis Analysis</h1>
-</div>
+    <>
+      <Hero />
+      <About />
+      <Services />
+    </>
   );
 }
