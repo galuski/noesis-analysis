@@ -27,6 +27,27 @@ export const es = {
   },
   services: {
     title: "Servicios",
-    subtitle: "Noesis Analysis ofrece soluciones de inteligencia aplicada enfocadas en la prevención de riesgos,\nel monitoreo de variables críticas y la construcción de escenarios para la toma de decisiones estratégicas y operativas."
+    subtitle:
+      "Noesis Analysis ofrece soluciones de inteligencia aplicada enfocadas en la prevención de riesgos,\nel monitoreo de variables críticas y la construcción de escenarios para la toma de decisiones estratégicas y operativas.",
   },
+  serviceslist: {
+    service1: {
+      title: "Riesgo País para Viajes y Operaciones",
+      description:
+        "Seguridad, estabilidad y escenarios para la movilidad internacional.",
+    },
+    service2: {
+      title: "Inteligencia Aplicada en Procesos Electorales y de Campaña",
+      description:
+        "Monitoreo político, análisis de actores, narrativas y riesgos.",
+    },
+    service3: {
+      title: "Inteligencia Aplicada a la Seguridad Institucional",
+      description:
+        "Evaluación de amenazas físicas y vulnerabilidades en organizaciones.",
+    },
+  },
+    button:{
+    text: "Vamos Hablar"
+  }
 };

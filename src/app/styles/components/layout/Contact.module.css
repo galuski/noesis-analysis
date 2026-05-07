@@ -1,0 +1,172 @@
+.contact {
+  width: 100%;
+}
+
+.contactInner {
+  background-color: var(--background);
+  position: relative;
+}
+
+.contactField {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 60vw;
+  gap: 40px;
+  padding: 5rem 10rem;
+}
+
+.contactField h3 {
+  color: var(--foreground);
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.contactField p {
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.formControl {
+  width: 100%;
+  border-radius: 0px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  color: var(--foreground); /* כדי שהטקסט יהיה קריא על הרקע הלבן */
+}
+
+.formControl:focus {
+  box-shadow: none;
+  outline: none;
+  color: var(--foreground);
+  border-bottom: 2px solid var(--foreground);
+}
+
+.formControl::placeholder {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+.contactInfoSec {
+  position: absolute;
+  background-color: var(--blue);
+  right: 1px;
+  top: 20%;
+  height: 300px;
+  width: 340px;
+  padding: 40px;
+  border-radius: 25px 0 0 25px;
+  color: var(--background);
+}
+
+.contactInfoSec h4 {
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+  color: var(--background);
+}
+
+.infoSingle {
+  display: flex;
+  align-items: center;
+  margin: 30px 0px;
+}
+
+.infoSingle i {
+  margin-right: 15px;
+}
+
+.infoSingle span {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.contactFormSubmit {
+  background: linear-gradient(to top right, var(--blue) -5%, var(--background) 100%);
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  width: 100%;
+  margin-top: 25px;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.socialItemInner li {
+  list-style: none;
+}
+
+.socialItemInner li a {
+  color: #fff;
+  margin: 0px 15px;
+  font-size: 14px;
+}
+
+.socialItemInner {
+  padding-bottom: 10px;
+}
+
+.mapSec {
+  padding: 50px 0px;
+}
+
+.mapInner h4,
+.mapInner p {
+  color: #000;
+  text-align: center;
+}
+
+.mapInner p {
+  font-size: 13px;
+}
+
+.mapBind {
+  margin-top: 50px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* =========================================
+   רספונסיביות - טבלט ומובייל
+   ========================================= */
+
+@media (max-width: 991px) {
+  .contactInfoSec {
+    position: relative; /* ביטול מיקום אבסולוטי כדי שלא יעלה על הטופס */
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .contactUs {
+    padding: 60px 0px;
+  }
+
+  .contactField {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .contactField h3 {
+    font-size: 2rem;
+  }
+
+  .contactInfoSec {
+    padding: 30px 20px;
+    border-radius: 0;
+  }
+
+  .title{
+    text-align: center;
+  }
+}

@@ -68,7 +68,7 @@
 /* התאמות למסכים קטנים (מובייל) */
 @media (max-width: 768px) {
   .aboutSection {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.2rem;
   }
 
   .title {

@@ -1,7 +1,7 @@
 .services {
   width: 100%;
   min-height: 100vh;
-  padding: 5rem 2rem; /* ריווח נשימה מלמעלה/למטה ומהצדדים למובייל */
+  padding: 5rem 1.2rem; /* ריווח נשימה מלמעלה/למטה ומהצדדים למובייל */
 }
 
 .title {
@@ -71,6 +71,7 @@
 }
 
 .cardTitle {
+  height: 85px;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 5px;
