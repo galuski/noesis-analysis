@@ -48,5 +48,8 @@ export const en = {
   },
   button:{
     text: "Let's talk"
+  },
+    scroll:{
+    text: "Scroll"
   }
 };

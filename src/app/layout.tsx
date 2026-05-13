@@ -3,6 +3,8 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { Urbanist, Montserrat } from "next/font/google";
 import "./styles/globals.css";
 import Header from "@/components/layout/Header";
+import { UserMsg } from "@/components/ui/UserMsg";
+import { WhatsApp } from "@/components/ui/WhatsApp";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -32,9 +34,11 @@ export default function RootLayout({
     <html lang="en" className={`${urbanist.variable} ${montserrat.variable}`}>
       <body>
         <LanguageProvider>
-        <Header />
-        {children}
+          <Header />
+          {children}
         </LanguageProvider>
+        <UserMsg />
+        <WhatsApp />
       </body>
     </html>
   );

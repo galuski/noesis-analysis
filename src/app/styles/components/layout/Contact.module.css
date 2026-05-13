@@ -3,7 +3,7 @@
 }
 
 .contactInner {
-  background-color: var(--background);
+  /* background-color: var(--background); */
   position: relative;
 }
 
@@ -36,8 +36,10 @@
   border-radius: 0px;
   border: none;
   border-bottom: 1px solid #ccc;
-  background: transparent;
-  color: var(--foreground); /* כדי שהטקסט יהיה קריא על הרקע הלבן */
+  color: var(--foreground);
+  background-color: var(--background);
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
 .formControl:focus {
@@ -87,15 +89,14 @@
 }
 
 .contactFormSubmit {
-  background: linear-gradient(to top right, var(--blue) -5%, var(--background) 100%);
+  background: var(--blue);
   border: none;
   color: #fff;
   padding: 10px 15px;
   width: 100%;
-  margin-top: 25px;
-  border-radius: 35px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 2px;
 }
 
@@ -166,7 +167,7 @@
     border-radius: 0;
   }
 
-  .title{
+  .title {
     text-align: center;
   }
 }

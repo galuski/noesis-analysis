@@ -50,4 +50,8 @@ export const it = {
   button: {
     text: "Parliamo",
   },
+
+    scroll: {
+    text: "pergamena",
+  },
 };

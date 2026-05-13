@@ -11,8 +11,6 @@
   outline: 2px solid var(--foreground);
   box-shadow: 0px 0px 10px var(--foreground);
   position: relative;
-  /* מוסיף סמן מתאים ללחיצה */
-  cursor: pointer;
 }
 
 .scroll {
@@ -26,7 +24,7 @@
 }
 
 .btn:after {
-  content: 'scroll';
+  content: attr(data-text); /* משיכת הערך בצורה דינמית מה-HTML */
   position: absolute;
   top: 130%;
   color: var(--foreground);

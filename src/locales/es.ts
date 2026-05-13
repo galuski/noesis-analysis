@@ -47,7 +47,11 @@ export const es = {
         "Evaluación de amenazas físicas y vulnerabilidades en organizaciones.",
     },
   },
-    button:{
-    text: "Vamos Hablar"
-  }
+  button: {
+    text: "Vamos Hablar",
+  },
+
+  scroll: {
+    text: "voluta",
+  },
 };

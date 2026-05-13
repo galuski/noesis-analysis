@@ -14,7 +14,7 @@ export default function Contact() {
                   <div className="col-md-10">
                     <div className={styles.contactFormInner}>
                       <form
-                        action="https://formsubmit.co/your_email@gmail.com"
+                        action="https://formsubmit.co/lab@noesisanalysis.com"
                         method="POST"
                         className={styles.contactField}
                       >

@@ -1,0 +1,18 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.globeWrapper {
+  position: relative;
+
+}
+
+.globeCanvas {
+  display: block;
+  outline: none;
+      background-color: var(--background);
+
+}

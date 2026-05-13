@@ -2,13 +2,19 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2rem; /* מוסיף רווח אחיד בין התמונה, הטקסט וכפתור הגלילה */
-  padding: 2rem 0; /* שומר שהאלמנטים לא יידבקו לקצוות המסך */
+  justify-content: center; /* ממרכז את התוכן אנכית */
+  align-items: center; /* ממרכז את התוכן אופקית */
+  position: relative; /* קריטי כדי למקם את הגלילה למטה */
+  padding: 0 1.2rem;
 }
 
+.heroContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
 .imageContainer {
   max-width: 350px;
 }
@@ -45,15 +51,11 @@
   white-space: pre-line;
 }
 
-/* Laptop & Small Desktop*/
-@media (max-width: 1279px) {
-  .title {
-    font-size: 3rem;
-  }
-
-  .subtitle {
-    font-size: 1.25rem;
-  }
+.scrollContainer {
+  position: absolute;
+  bottom: 2rem; /* המרחק הרצוי מתחתית המסך - שחק עם זה לפי הצורך */
+  left: 50%;
+  transform: translateX(-50%); /* מתקן את המיקום כדי שיהיה בדיוק באמצע האופקי */
 }
 
 /* Tablet Portrait / Large Phones */
@@ -63,25 +65,38 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    gap: 2rem; /* מוסיף רווח אחיד בין התמונה, הטקסט וכפתור הגלילה */
-    padding: 8rem 1.2rem; /* שומר שהאלמנטים לא יידבקו לקצוות המסך */
+    padding: 2rem 1.2rem;
+  }
+
+  /* התיקון הקריטי למרכוז ולסדר: */
+  .heroContainer {
+    flex-direction: column; /* מסדר אותם בעמודה, התמונה תהיה ראשונה כי היא ראשונה ב-HTML */
+    gap: 2rem; /* מרווח בין הגלובוס לטקסט */
   }
 
   .imageContainer {
-    max-width: 250px;
-  }
-
-  .title {
-    font-size: 4rem; /* גודל מותאם למובייל */
+    max-width: 200px; /* הקטנתי טיפה מ-250px שיהיה פרופורציונלי למסך מובייל */
+    margin: 0 auto; /* מוודא שהתמונה מרוכזת */
   }
 
   .contentContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: center; /* ממרכז את הכפתור ביחס לטקסט */
+    text-align: center; /* ממרכז את הטקסט עצמו */
+    gap: 15px; /* מרווח בין הכותרת, כותרת משנה וכפתור */
+  }
+
+  .title {
+    font-size: 2.5rem; /* 4rem היה גדול מדי וגרם לשבירת שורות אגרסיבית */
+    line-height: 1.1;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
   }
 }
+

@@ -2,9 +2,14 @@
 
 import styles from './../../app/styles/components/ui/Scroll.module.css';
 
-export default function Scroll() {
+interface ScrollProps {
+  text: string;
+}
+
+export default function Scroll({ text }: ScrollProps) {
   return (
-    <button className={styles.btn}>
+    // הזרקת הטקסט למאפיין data-text
+    <button className={styles.btn} data-text={text}>
       <div className={styles.scroll}></div>
     </button>
   );
