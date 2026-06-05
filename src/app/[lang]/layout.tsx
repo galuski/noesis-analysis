@@ -52,7 +52,7 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ lang: "en" | "es" | "it" }>; // שינינו ל-Promise
+  params: Promise<{ lang: string }>;
 }>) {
   // זה התיקון הקריטי! מחכים ל-params ואז מחלצים את השפה
   const { lang } = await params;
