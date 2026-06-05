@@ -9,7 +9,7 @@ export default function Logo() {
   return (
     <Link href="/" className={styles.logoLink}>
       <Image 
-        src="./logo.svg" 
+        src="/logo.svg" 
         alt="My Company Logo" 
         width={80} 
         height={80} 
