@@ -2,99 +2,151 @@
   width: 100%;
   min-height: 100vh;
   color: var(--blue);
+  background-color: #FEFBFB; 
+  padding: 3rem 1.2rem;
   display: flex;
-  justify-content: center; /* ממרכז את התוכן במסכים רחבים */
-  padding: 5rem 2rem; /* ריווח נשימה מלמעלה/למטה ומהצדדים למובייל */
+  justify-content: center;
 }
 
 .container {
-  max-width: 800px; /* הגבלת רוחב הטקסט כדי למנוע שורות ארוכות ומעייפות לעין */
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- תמונה --- */
+.imageWrapper {
+  width: 100%;
+}
+
+.aboutImg1 {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5; /* פרופורציה של פורטרט (לאורך) עובדת מעולה בעמודה צדדית */
+  object-fit: cover;
+  /* border-radius: 8px; */
+}
+
+/* --- פריסה מפוצלת (Split Layout) --- */
+.splitLayout {
+  display: flex;
+  gap: 6rem; /* ריווח נדיב בין הכותרת לטקסט */
+  align-items: flex-start; /* קריטי כדי שה-Sticky יעבוד */
+}
+
+/* --- עמודה שמאלית (כותרת דביקה) --- */
+.leftColumn {
+  flex: 1;
+  position: sticky;
+  top: 100px; /* התאם לפי ההדר שלך */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* רווח יפה בין הכותרת לתמונה */
 }
 
 .title {
   font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-  text-align: center; /* מרכוז הכותרת מעל הטקסט */
-}
-
-.textContent {
-  font-size: 1.125rem; /* גודל פונט אידיאלי לקריאה - שווה ל-18px */
-  line-height: 1.75; /* מרווח אוויר מצוין בין שורה לשורה */
-  font-weight: 400;
-  opacity: 0.9; /* ריכוך עדין של הקונטרסט כדי שלא יסנוור את העין */
-}
-
-.textContent p {
-  margin-bottom: 1.5rem; /* מרווח אחיד וברור בין כל פסקה */
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
   color: var(--blue);
 }
 
-.list {
+/* --- עמודה ימנית (תוכן) --- */
+.rightColumn {
+  flex: 2; /* תופס פי 2 מקום מהכותרת */
+  display: flex;
+  flex-direction: column;
+}
+
+.leadText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--blue);
+}
+
+.paragraph {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 3rem;
+}
+
+/* --- אזור העקרונות (רשימה מינימליסטית) --- */
+.valuesSection {
+  margin-bottom: 4rem;
+}
+
+.valuesIntro {
+  font-size: 1.125rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-  /* 1. מכבים את הנקודות הרגילות של הדפדפן */
-  list-style-type: none;
-  /* 2. מאפסים את הריווח הדיפולטיבי כדי שנשלוט בו בעצמנו */
-  padding-left: 0;
 }
 
-.list li {
-  /* 3. מגדירים מיקום יחסי כדי שנוכל למקם את החץ בתוכו */
-  position: relative;
-  margin-bottom: 0.75rem;
-  /* 4. דוחפים את הטקסט פנימה כדי לעשות מקום לחץ */
-  padding-left: 1.5rem;
+.minimalList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* קו סוגר בתחתית הרשימה */
 }
 
-.list li::before {
-  content: "▶"; /* זהו תו משולש. אפשר גם "▸" או "►" אם אתה מעדיף סגנון קצת שונה */
-  position: absolute;
-  left: 0; /* מצמיד את החץ לשמאל */
-  top: 4px; /* כוונון עדין של הגובה כדי שהחץ יישב בדיוק מול מרכז השורה הראשונה */
-
-  /* אפשר לשים פה איזה צבע שרוצים! למשל הצבע הכחול מהכפתור שעיצבת קודם: */
-  color: var(--blue);
-  font-size: 0.75rem; /* גודל החץ */
+.minimalList li {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* קו מפריד מעל כל פריט */
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
-.highlightText {
-  font-size: 1.7rem;
+/* --- משפט המחץ --- */
+.punchlineText {
+  font-size: 1.75rem;
   font-weight: 700;
-  margin-top: 2.5rem; /* הפרדה ברורה יותר ממשפט הסיום */
+  color: var(--blue);
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--blue); /* קו הדגשה בצד שמאל */
+  margin-bottom: 4rem;
 }
 
-.wordWrapper {
-  display: inline-block;
-  overflow: hidden;
-  margin-right: 0.25rem; /* מרווח קבוע מצד ימין (LTR) */
+.globeWrapper {
+  margin-top: auto; /* דוחף את הגלובוס לתחתית אם צריך */
 }
 
-.word {
-  display: inline-block;
-  transform: translateY(100%);
-  opacity: 0;
-}
+/* --- התאמות למובייל ומסכים קטנים --- */
+@media (max-width: 992px) {
+  .splitLayout {
+    flex-direction: column;
+    gap: 3rem;
+  }
 
-.markerHighlight {
-  background-image: linear-gradient(120deg, #ffd700 0%, #ffd700 100%);
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  background-position: 0% 90%; /* תמיד מתחיל משמאל (LTR) */
-  padding-bottom: 2px;
-}
-
-/* התאמות למסכים קטנים (מובייל) */
-@media (max-width: 768px) {
-  .aboutSection {
-    padding: 3rem 1.2rem;
+  .leftColumn {
+    position: static; /* במובייל מבטלים את הדביקות */
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    text-align: center;
   }
 
-  .textContent {
-    font-size: 1rem; /* הקטנה קלה למובייל */
+  .leadText {
+    font-size: 1.35rem;
+  }
+
+  .aboutImg1 {
+    height: 300px;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1.2rem;
+  }
+
+  .punchlineText {
+    font-size: 1.5rem;
+    padding-left: 1rem;
   }
 }

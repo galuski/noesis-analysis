@@ -1,5 +1,5 @@
 /* המיכל שעוטף את הכל - חשוב כדי שהתפריט הנפתח ימוקם ביחס אליו */
-.container {
+.languageSwitcher {
   position: relative;
   display: inline-block;
   z-index: 1000;

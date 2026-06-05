@@ -1,68 +1,73 @@
 "use client";
-import Image from "next/image";
+
 import { useState } from "react";
-import { useLanguage, Language } from "@/context/LanguageContext"; // ייבוא ההוק שלנו
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "@/app/styles/components/layout/LanguageSwitcher.module.css"; 
 
-import styles from "@/app/styles/components/layout/LanguageSwitcher.module.css";
-
-const LANGUAGES = [
-  { code: "en", label: "English", flag: "/flags/en.png" },
-  { code: "es", label: "Español", flag: "/flags/es.png" },
-  { code: "it", label: "Italiano", flag: "/flags/it.png" },
+const languages = [
+  { code: "en", label: "English", icon: "/flags/en.png" }, 
+  { code: "es", label: "Español", icon: "/flags/es.png" },
+  { code: "it", label: "Italiano", icon: "/flags/it.png" },
 ];
 
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
-  
-  // שימוש ב-Context במקום ב-useState מקומי
-  const { lang, setLang } = useLanguage(); 
+  const pathname = usePathname();
 
-  const currentLang = LANGUAGES.find((l) => l.code === lang);
+  const currentLocale = pathname ? pathname.split("/")[1] : "en";
+  const currentLanguageData = languages.find(lang => lang.code === currentLocale);
 
-  const handleLanguageChange = (langCode: string) => {
-    setLang(langCode as Language); // עדכון השפה הגלובלית
-    setIsOpen(false);
+  const redirectedPathName = (locale: string) => {
+    if (!pathname) return "/";
+    const segments = pathname.split("/");
+    segments[1] = locale; 
+    return segments.join("/");
   };
 
   return (
-    <div className={styles.container}>
-      <button
-        className={styles.button}
+    <div className={styles.languageSwitcher}>
+      <button 
+        className={styles.button} 
         onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
+        type="button"
       >
-        {currentLang && (
-          <Image
-            src={currentLang.flag}
-            alt={currentLang.label}
-            width={20}
-            height={15}
-            className={styles.flagIcon}
+        {currentLanguageData && (
+          <img 
+            src={currentLanguageData.icon} 
+            alt={currentLanguageData.label} 
+            className={styles.flagIcon} 
+            width="20" 
+            height="15" 
           />
         )}
-        <span>{currentLang?.label}</span>
-        <span aria-hidden="true">▼</span>
+        
+        {/* התיקון: מציג את המילה המלאה ("English") בלי פונט מודגש או Uppercase */}
+        <span>
+          {currentLanguageData ? currentLanguageData.label : "English"}
+        </span>
+        
+        {/* החץ במראה נקי וטבעי יותר שמתאים לתמונה */}
+        <span style={{ fontSize: "10px", marginLeft: "2px" }}>▼</span>
       </button>
 
       <div className={`${styles.dropdown} ${isOpen ? styles.open : ""}`}>
-        {LANGUAGES.map((languageOption) => (
-          <button
-            key={languageOption.code}
+        {languages.map((lang) => (
+          <Link
+            key={lang.code}
+            href={redirectedPathName(lang.code)}
             className={styles.langOption}
-            onClick={() => handleLanguageChange(languageOption.code)}
-            style={{
-              fontWeight: lang === languageOption.code ? "bold" : "normal",
-            }}
+            onClick={() => setIsOpen(false)}
           >
-            <Image
-              src={languageOption.flag}
-              alt={languageOption.label}
-              width={20}
-              height={15}
-              className={styles.flagIcon}
+            <img 
+              src={lang.icon} 
+              alt={lang.label} 
+              className={styles.flagIcon} 
+              width="20" 
+              height="15" 
             />
-            {languageOption.label}
-          </button>
+            <span>{lang.label}</span>
+          </Link>
         ))}
       </div>
     </div>

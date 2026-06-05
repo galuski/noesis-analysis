@@ -3,7 +3,6 @@
 }
 
 .contactInner {
-  /* background-color: var(--background); */
   position: relative;
 }
 
@@ -20,8 +19,9 @@
 .contactField h3 {
   color: var(--foreground);
   font-size: 2.5rem;
-  letter-spacing: 1px;
-  font-weight: 600;
+  line-height: 1.2;
+  font-weight: 800;
+  margin: 0;
 }
 
 .contactField p {
@@ -37,7 +37,7 @@
   border: none;
   border-bottom: 1px solid #ccc;
   color: var(--foreground);
-  background-color: var(--background);
+  background-color: #F6F1EB;
   font-size: 1rem;
   letter-spacing: 1px;
 }
@@ -91,7 +91,7 @@
 .contactFormSubmit {
   background: var(--blue);
   border: none;
-  color: #fff;
+  color: var(--background);
   padding: 10px 15px;
   width: 100%;
   border-radius: 6px;

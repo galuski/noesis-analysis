@@ -1,89 +1,72 @@
+/* Services.module.css */
+
 .services {
   width: 100%;
-  min-height: 100vh;
-  padding: 5rem 1.2rem; /* ריווח נשימה מלמעלה/למטה ומהצדדים למובייל */
+  min-height: 80vh; /* קצת פחות מ-full height */
+  padding: 3rem 1.2rem; /* יותר ריווח נשימה */
+  background-color: var(--blue); /* צבע רקע עדין ובהיר */
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-  text-align: center; /* מרכוז הכותרת מעל הטקסט */
+  font-size: 2.5rem; /* כותרת גדולה יותר */
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--background);
 }
 
 .subtitle {
-  white-space: pre-line;
   text-align: center;
-  margin-bottom: 10px;
+  color: var(--background);
+  margin: 1rem 1.2rem;
+  line-height: 1.5;
 }
-
-.card {
-  text-align: center;
-  padding: 8px 12px;
-  border: 1px solid var(--foreground);
-  border-radius: 6px;
-}
-
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* טור 1 במובייל */
-  gap: 30px;
+  gap: 40px; /* ריווח גדול יותר בין הפריטים */
+  max-width: 1200px;
+  margin: 0 auto; /* מרכוז הגריד */
 }
 
-/* מסכים גדולים יותר - 3 טורים */
+/* מסכים גדולים יותר - 4 טורים */
 @media (min-width: 768px) {
   .cardsGrid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* עיצוב הכרטיסייה עצמה */
 .card {
-  border-radius: 12px;
-  overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center; /* מרכוז האייקון */
+  gap: 15px; /* ריווח בין אייקון לכותרת */
 }
 
-/* .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-} */
-
-/* עטיפת התמונה קריטית כשעובדים עם fill ב-next/image */
 .imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 180px; /* גובה קבוע לתמונות */
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px; /* גודל המעטפת */
+  height: 48px;
 }
 
 .cardImage {
-  object-fit: contain; /* מוודא שהתמונה תחתוך את עצמה יפה בלי להימעך */
-}
-.cardImage:hover {
-  transform: translateY(-5px);
-}
-
-.cardContent {
-  padding: 10px;
-  flex-grow: 1; /* מוודא שהטקסט ימלא את המקום אם הכרטיסיות בגבהים שונים */
+  object-fit: contain;
 }
 
 .cardTitle {
-  height: 85px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: var(--foreground);
-  line-height: 1.4;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--background);
+  margin: 0;
+  line-height: 1.2;
+  margin: 1rem;
 }
 
-.cardDescription {
+.cardDescription{
   font-size: 1rem;
-  color: var(--foreground);
-  line-height: 1.6;
+  color: var(--background);
+  line-height: 1.1;
 }

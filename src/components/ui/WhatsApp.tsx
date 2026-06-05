@@ -7,7 +7,7 @@ export function WhatsApp() {
         <a 
             className={styles.whatsapp} 
             aria-label="Chat on WhatsApp" 
-            href="https://wa.me/31657164489"
+            href="https://wa.me/34657164489"
             target="_blank"
             rel="noopener noreferrer"
         >

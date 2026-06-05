@@ -19,15 +19,10 @@
   max-width: 350px;
 }
 
-/* הגדרה קריטית כדי שהתמונה תקטן במסכים קטנים ולא תשבור את האתר */
 .mapImage {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   filter: blur(0px) contrast(1.5) brightness(1);
 }
+
 .mapImage:hover {
   transition: filter 0.5s ease-in-out;
   filter: blur(0) contrast(1.5) brightness(1.5);

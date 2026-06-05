@@ -1,9 +1,9 @@
 "use client";
 
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import { en } from "@/locales/en";
-import { es } from "@/locales/es";
-import { it } from "@/locales/it";
+import en from "@/locales/en";
+import es from "@/locales/es";
+import it from "@/locales/it";
 
 // טיפוסי נתונים עבור TypeScript
 const dictionaries = { en, es, it };

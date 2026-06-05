@@ -1,37 +1,32 @@
-"use client";
-
-import Image from "next/image";
 import styles from "./../../app/styles/components/layout/Hero.module.css";
-import { useLanguage } from "@/context/LanguageContext";
 import Button from "../ui/Button";
 import Scroll from "../ui/Scroll";
+import worldMapIMG from "./../../../public/world-map.svg";
 
-export default function Hero() {
-  const { t } = useLanguage();
-
+// הרכיב עכשיו מקבל את dict (המילון המלא) כ-Prop מהשרת
+export default function Hero({ dict }: { dict: any }) {
   return (
     <section className={styles.hero}>
       <div className={styles.heroContainer}>
         <div className={styles.imageContainer}>
-          <Image
-            src="/world-map.svg"
+          <img
+            src={worldMapIMG.src} /* הוספנו .src בגלל שזה ייבוא סטטי של קובץ */
             alt="Noesis Analysis Visualization"
-            width={350}
-            height={350}
-            priority
             className={styles.mapImage}
+            style={{ width: "100%", height: "auto", maxWidth: "350px" }}
           />
         </div>
 
         <div className={styles.contentContainer}>
-          <h1 className={styles.title}>{t("hero.title")}</h1>
-          <h2 className={styles.subtitle}>{t("hero.subtitle")}</h2>
-          <Button text={t("button.text")} targetId="contact" />
+          {/* שולפים את הטקסטים ישירות מתוך אובייקט המילון */}
+          <h1 className={styles.title}>{dict.hero.title}</h1>
+          <h2 className={styles.subtitle}>{dict.hero.subtitle}</h2>
+          <Button text={dict.button.text} targetId="contact" />
         </div>
       </div>
 
       <div className={styles.scrollContainer}>
-        <Scroll text={t("scroll.text")} />{" "}
+        <Scroll text={dict.scroll.text} />{" "}
       </div>
     </section>
   );
